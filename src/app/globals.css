@@ -1,0 +1,27 @@
+/**
+ * Global styles for eye pressure record app
+ */
+
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fullscreen chart styles */
+:fullscreen {
+  background: white;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
