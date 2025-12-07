@@ -168,8 +168,14 @@ export default function PressureChart({ data, title, is24h = false }: PressureCh
 
   // Handle mobile landscape orientation in fullscreen
   useEffect(() => {
-    if (isFullscreen && window.screen?.orientation?.lock) {
-      window.screen.orientation.lock("landscape").catch(() => {});
+    if (isFullscreen) {
+      // ScreenOrientation.lock is experimental, use type assertion
+      const orientation = window.screen?.orientation as ScreenOrientation & {
+        lock?: (orientation: string) => Promise<void>;
+      };
+      if (orientation?.lock) {
+        orientation.lock("landscape").catch(() => {});
+      }
     }
   }, [isFullscreen]);
 
