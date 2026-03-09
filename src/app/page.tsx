@@ -8,6 +8,8 @@ import { groupRecords } from "@/lib/grouping";
 import MainContent from "@/components/MainContent";
 import { RecordGroup } from "@/types";
 
+export const revalidate = 3600; // 1 hour
+
 export default async function Home() {
   let groups: RecordGroup[] = [];
   let error: string | null = null;
@@ -32,7 +34,8 @@ export default async function Home() {
     <div
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(to bottom right, #f8fafc, #eff6ff, #f1f5f9)",
+        background:
+          "linear-gradient(to bottom right, #f8fafc, #eff6ff, #f1f5f9)",
       }}
     >
       {/* Header */}
@@ -58,7 +61,8 @@ export default async function Home() {
             <div
               style={{
                 padding: "8px",
-                background: "linear-gradient(to bottom right, #3b82f6, #8b5cf6)",
+                background:
+                  "linear-gradient(to bottom right, #3b82f6, #8b5cf6)",
                 borderRadius: "12px",
                 boxShadow: "0 4px 6px -1px rgba(59, 130, 246, 0.2)",
               }}
@@ -84,7 +88,9 @@ export default async function Home() {
               </svg>
             </div>
             <div>
-              <h1 style={{ fontSize: "20px", fontWeight: 700, color: "#0f172a" }}>
+              <h1
+                style={{ fontSize: "20px", fontWeight: 700, color: "#0f172a" }}
+              >
                 眼压记录
               </h1>
               <p style={{ fontSize: "14px", color: "#64748b" }}>
@@ -115,7 +121,9 @@ export default async function Home() {
             padding: "24px 16px",
           }}
         >
-          <p style={{ textAlign: "center", fontSize: "14px", color: "#64748b" }}>
+          <p
+            style={{ textAlign: "center", fontSize: "14px", color: "#64748b" }}
+          >
             All rights reserved.
           </p>
         </div>
